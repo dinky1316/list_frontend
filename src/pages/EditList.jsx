@@ -1,16 +1,28 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "./List.css";
 import axios from "axios";
 
 function AddList() {
   let navigate = useNavigate();
 
+  const { id } = useParams();
+
   const [list, setList] = useState({
     listName: "",
     content: "",
     emoji: "",
   });
+
+  useEffect(() => {
+    loadList();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const loadList = async () => {
+    const result = await axios.get(`http://localhost:8080/list/${id}`);
+    setList(result.data);
+  };
 
   const onInputChange = (e) => {
     setList({
@@ -24,7 +36,7 @@ function AddList() {
   // 폼 이벤트
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:8080/addList", list);
+    await axios.put(`http://localhost:8080/list/${id}`, list);
     navigate("/");
   };
 
@@ -32,7 +44,7 @@ function AddList() {
     <div className="container animation">
       <div className="row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-5 shadow">
-          <h1 className="text-center m-4">🌴 Add List 🌵</h1>
+          <h1 className="text-center m-4">🌴 Edit List 🌵</h1>
           <form onSubmit={onSubmit}>
             <div className="mb-3">
               <label htmlFor="listName" className="form-label">
@@ -82,13 +94,13 @@ function AddList() {
             <div className="mb-3 text-center">
               <button
                 type="submit"
-                className="btn btn-outline-success px-3 mx-2"
-                onClick={() => alert("등록 완료 😍")}
+                className="btn btn-outline-success px-3 mx-2 button"
+                onClick={() => alert("수정 완료 😘")}
               >
-                등록
+                EDIT
               </button>
-              <Link to="/" className="btn btn-outline-dark px-3 mx-2">
-                취소
+              <Link to="/" className="btn btn-outline-dark px-3 mx-2 button">
+                BACK
               </Link>
             </div>
           </form>

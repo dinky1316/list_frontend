@@ -2,10 +2,10 @@ import React from "react";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg bg-light">
+    <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
-        <a className="navbar-brand study" href="/">
-          🐏 STUDY 🐑
+        <a className="navbar-brand study button" href="/listcard">
+          🐏 ToDoList 🐑
         </a>
         <button
           className="navbar-toggler"
@@ -28,31 +28,31 @@ function Navbar() {
         </li> */}
             <li className="nav-item dropdown">
               <a
-                className="nav-link dropdown-toggle"
+                className="nav-link dropdown-toggle button"
                 href="##"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Menu
+                List
               </a>
               <ul className="dropdown-menu">
                 <li>
-                  <a className="dropdown-item" href="##">
-                    TodoList
+                  <a className="dropdown-item" href="/listcard">
+                    All List
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="##">
-                    Another action
+                  <a className="dropdown-item" href="/addlist">
+                    Add List
                   </a>
                 </li>
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  <a className="dropdown-item" href="##">
-                    Something else here
+                  <a className="dropdown-item" href="/list">
+                    🌴🌻🌵
                   </a>
                 </li>
               </ul>
