@@ -10,6 +10,7 @@ import ViewList from "./pages/ViewList";
 import EditList from "./pages/EditList";
 import ListCard from "./pages/ListCard";
 import Footer from "./layout/Footer";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
           <Route path="/editlist/:id" element={<EditList />} />
           <Route path="/deletelist/:id" element={<EditList />} />
           <Route path="/listcard" element={<ListCard />} />
-          <Route path="/" element={<ListCard />} />
+          <Route path="/" element={<Home />} />
         </Routes>
         <Footer />
       </BrowserRouter>

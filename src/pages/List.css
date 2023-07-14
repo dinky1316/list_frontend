@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
 
-h1, h4, h5{
+h1, h4, h5, h2, h3{
    /* font-family: 'VT323', monospace; */
    font-family: 'Black Han Sans', sans-serif;
    text-align: center;
@@ -19,9 +19,17 @@ h1, h4, h5{
    vertical-align:middle;
    text-align: center;
  }
- /* input.content{
+ .deco{
+    position: absolute;
+  top: 23%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ }
 
- } */
+ .gogo{
+   /* left: 50%; */
+   transform: translate(15%);
+ }
  input:hover{
    background-color: rgba(153, 205, 50, 0.534);
  }

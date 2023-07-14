@@ -10,6 +10,26 @@ function List() {
     loadList();
   }, []);
 
+  const [pin, setPin] = useState([]);
+
+  useEffect(() => {
+    const pinList = JSON.parse(localStorage.getItem("pin"));
+    if (pinList) {
+      setPin(pinList);
+    }
+  }, []);
+
+  const saveToLocalStorage = (items) => {
+    localStorage.setItem("pin", JSON.stringify(items));
+  };
+
+  const addPin = (list) => {
+    const pinList = [...pin, list];
+    setPin(pinList);
+    saveToLocalStorage(pinList);
+    window.alert("핀보드에 추가 완료 😉");
+  };
+
   const loadList = async () => {
     const result = await axios.get("http://localhost:8080/list");
     setList(result.data);
@@ -39,6 +59,9 @@ function List() {
             <th scope="col" className="title">
               DELETE
             </th>
+            <th scope="col" className="title">
+              PIN
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -60,6 +83,14 @@ function List() {
                   className="btn btn-outline-warning px-3 mx-2 button"
                 >
                   🌻
+                </button>
+              </td>
+              <td>
+                <button
+                  onClick={() => addPin(list)}
+                  className="btn btn-outline-danger button"
+                >
+                  📌
                 </button>
               </td>
             </tr>

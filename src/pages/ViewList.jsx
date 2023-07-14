@@ -40,7 +40,7 @@ function ViewList() {
           >
             EDIT
           </Link>
-          <Link to={"/"} className="btn btn-outline-dark mx-1 button ">
+          <Link to={"/listCard"} className="btn btn-outline-dark mx-1 button ">
             BACK
           </Link>
         </div>
