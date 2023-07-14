@@ -39,7 +39,7 @@ function Navbar() {
               <ul className="dropdown-menu">
                 <li>
                   <a className="dropdown-item" href="/listcard">
-                    All List
+                    Search List
                   </a>
                 </li>
                 <li>
