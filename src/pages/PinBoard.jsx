@@ -25,6 +25,7 @@ function Home() {
     localStorage.setItem("pin", JSON.stringify(modifyPin));
     setPin(modifyPin);
     saveToLocalStorage(modifyPin);
+    window.location.replace("/pinboard");
   };
 
   // 리스트 삭제

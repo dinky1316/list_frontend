@@ -6,22 +6,22 @@ function Home() {
     <div>
       <h1 className="display-1 my-5">Home</h1>;
       <div className="deco">
-        <button type="button" class="btn btn-primary mx-2">
+        <button type="button" className="btn btn-primary mx-2">
           🌊
         </button>
-        <button type="button" class="btn btn-success mx-2">
+        <button type="button" className="btn btn-success mx-2">
           🌵
         </button>
-        <button type="button" class="btn btn-danger mx-2">
+        <button type="button" className="btn btn-danger mx-2">
           🍒
         </button>
-        <button type="button" class="btn btn-warning mx-2">
+        <button type="button" className="btn btn-warning mx-2">
           🌻
         </button>
-        <button type="button" class="btn btn-light mx-2">
+        <button type="button" className="btn btn-light mx-2">
           ⛄
         </button>
-        <button type="button" class="btn btn-dark mx-2">
+        <button type="button" className="btn btn-dark mx-2">
           🌙
         </button>
       </div>
