@@ -38,6 +38,11 @@ function Navbar() {
               </a>
               <ul className="dropdown-menu">
                 <li>
+                  <a className="dropdown-item" href="/pinBoard">
+                    Pin Board
+                  </a>
+                </li>
+                <li>
                   <a className="dropdown-item" href="/listcard">
                     Search List
                   </a>

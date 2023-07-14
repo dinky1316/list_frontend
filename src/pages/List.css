@@ -4,6 +4,7 @@
 h1, h4, h5{
    /* font-family: 'VT323', monospace; */
    font-family: 'Black Han Sans', sans-serif;
+   text-align: center;
  }
 
  /* td:hover, th:hover{
@@ -52,6 +53,7 @@ h4.emoji{
 /* .card:hover{
    background-color: rgba(108, 155, 126, 0.884);
 } */
+
 @keyframes fadeInUp {
    0% {
        opacity: 0;
