@@ -37,7 +37,7 @@ function AddList() {
   const onSubmit = async (e) => {
     e.preventDefault();
     await axios.put(`http://localhost:8080/list/${id}`, list);
-    navigate("/");
+    navigate("/listcard");
   };
 
   return (

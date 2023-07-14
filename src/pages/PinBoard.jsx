@@ -28,6 +28,14 @@ function Home() {
     window.location.replace("/pinboard");
   };
 
+  const clear = () => {
+    if (window.confirm("핀보드 진짜 다 날려요?! 😮")) {
+      window.alert("💥😎 완료");
+      window.localStorage.removeItem("pin");
+      window.location.replace("/pinboard");
+    }
+  };
+
   // 리스트 삭제
   const deleteList = async (id) => {
     if (window.confirm("진짜 지워요? 🥺")) {
@@ -40,9 +48,12 @@ function Home() {
   return (
     <div>
       <h1 className="my-5">Pin Board</h1>
-      {/* <div className="container row row-cols-4 g-4 animation"> */}
-      {/* <GetList list={pin} /> */}
-      {/*  */}
+      <button
+        onClick={() => clear()}
+        className="btn btn-danger button col-md-1 offset-md-2"
+      >
+        CLEAR
+      </button>
       <div className="container row row-cols-4 g-4 animation">
         {pin.map((list) => (
           <div key={list.id}>
